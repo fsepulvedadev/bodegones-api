@@ -12,6 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/bodegones", bodegonesRouter);
+app.get("/", (req, res) => res.send("Hola bienvenido a la api de bodegones"));
 
 app.listen(3000, () =>
   mongoose
