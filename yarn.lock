@@ -174,6 +174,8 @@ __metadata:
     express: ^4.18.2
     mongoose: ^7.2.2
     nodemon: ^2.0.22
+    start: ^5.1.0
+    yarn: ^1.22.19
   languageName: unknown
   linkType: soft
 
@@ -1629,6 +1631,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"start@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "start@npm:5.1.0"
+  checksum: 6dfb77e5446296f1d4c66977bb1d3438781c9cad2696791195274184802ce01c316034993f39c0774bf942a047bd2ff62ba1372c1e6f83398c35476e7187f6e4
+  languageName: node
+  linkType: hard
+
 "statuses@npm:2.0.1":
   version: 2.0.1
   resolution: "statuses@npm:2.0.1"
@@ -1835,5 +1844,15 @@ __metadata:
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
   checksum: 343617202af32df2a15a3be36a5a8c0c8545208f3d3dfbc6bb7c3e3b7e8c6f8e7485432e4f3b88da3031a6e20afa7c711eded32ddfb122896ac5d914e75848d5
+  languageName: node
+  linkType: hard
+
+"yarn@npm:^1.22.19":
+  version: 1.22.19
+  resolution: "yarn@npm:1.22.19"
+  bin:
+    yarn: bin/yarn.js
+    yarnpkg: bin/yarn.js
+  checksum: b43d2cc5fee7e933beb12a8aee7dfceca9e9ef2dd17c5d04d15a12ab7bec5f5744ea34a07b86e013da7f291a18c4e1ad8f70e150f5ed2f4666e6723c7f0a8452
   languageName: node
   linkType: hard
