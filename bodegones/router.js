@@ -18,7 +18,7 @@ bodegonesRouter.get("/", async (req, res) => {
     res.send(productos); */
     res.send("ESTO ANDA");
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send(JSON.stringify(error));
   }
 });
 bodegonesRouter.get("/:id", async (req, res) => {
