@@ -14,8 +14,9 @@ bodegonesRouter.post("/", async (req, res) => {
 
 bodegonesRouter.get("/", async (req, res) => {
   try {
-    const productos = await bodegonModel.find();
-    res.send(productos);
+    /*     const productos = await bodegonModel.find();
+    res.send(productos); */
+    res.send("ESTO ANDA");
   } catch (error) {
     res.status(500).send(error);
   }
