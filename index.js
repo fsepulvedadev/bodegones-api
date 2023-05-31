@@ -15,10 +15,10 @@ app.use(express.json());
 app.use("/bodegones", bodegonesRouter);
 app.get("/", async (req, res) => {
   try {
-    const bodegonCreado = await bodegonModel.create(req.body);
-    res.status(201).send(bodegonCreado);
-  } catch (e) {
-    res.status(500).send(e);
+    const bodegones = await bodegonModel.find();
+    res.send(bodegones);
+  } catch (error) {
+    res.status(500).send(JSON.stringify(error));
   }
 });
 
