@@ -5,8 +5,8 @@ export const bodegonesRouter = express.Router();
 
 bodegonesRouter.post("/", async (req, res) => {
   try {
-    const productoCreado = await bodegonModel.create(req.body);
-    res.status(201).send(productoCreado);
+    const bodegonCreado = await bodegonModel.create(req.body);
+    res.status(201).send(bodegonCreado);
   } catch (e) {
     res.status(500).send(e);
   }
@@ -14,16 +14,16 @@ bodegonesRouter.post("/", async (req, res) => {
 
 bodegonesRouter.get("/", async (req, res) => {
   try {
-    const productos = await bodegonModel.find();
-    res.send(productos);
+    const bodegones = await bodegonModel.find();
+    res.send(bodegones);
   } catch (error) {
     res.status(500).send(JSON.stringify(error));
   }
 });
 bodegonesRouter.get("/:id", async (req, res) => {
   try {
-    const producto = await bodegonModel.findOne({ _id: req.params.id });
-    res.send(producto);
+    const bodegon = await bodegonModel.findOne({ _id: req.params.id });
+    res.send(bodegon);
   } catch (error) {
     res.status(404).send(error);
   }
