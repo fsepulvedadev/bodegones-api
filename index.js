@@ -24,8 +24,6 @@ app.get("/", async (req, res) => {
 
 app.listen(3000, () =>
   mongoose
-    .connect(
-      "mongodb+srv://fsepulveda:14297010nrc@cluster0.koydvie.mongodb.net/?retryWrites=true&w=majority"
-    )
+    .connect(DATABASE_URI)
     .then(() => console.log("Servidor levantado en 3000"))
 );
