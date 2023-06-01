@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 const PORT = process.env.PORT || 3000;
 
 dotenv.config({ path: "./.env" });
+let error;
 
 import { bodegonesRouter } from "./bodegones/router.js";
 
@@ -16,11 +17,18 @@ app.use(express.json());
 app.use("/bodegones", bodegonesRouter);
 app.get("/", async (req, res) => {
   console.log(mongoose.connection.readyState);
-  res.send(`Hola mundo ${mongoose.connection.readyState}`);
+  if (error) {
+    res.send(`Hola mundo ${error}`);
+  } else {
+    res.send(`Hola mundo ${mongoose.connection.readyState}`);
+  }
 });
 
 app.listen(PORT, () =>
   mongoose
     .connect(process.env.MONGODB_URI)
     .then(() => console.log("Servidor levantado en 3000"))
+    .catch((e) => {
+      error = e;
+    })
 );
