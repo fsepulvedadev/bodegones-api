@@ -23,12 +23,13 @@ app.get("/", async (req, res) => {
     res.send(`Hola mundo ${mongoose.connection.readyState}`);
   }
 });
-
-app.listen(PORT, () =>
-  mongoose
-    .connect(process.env.MONGODB_URI)
-    .then(() => console.log("Servidor levantado en 3000"))
-    .catch((e) => {
-      error = e;
-    })
-);
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() =>
+    app.listen(PORT, () =>
+      console.log(`Servidor corriendo en el puerto ${PORT}`)
+    )
+  )
+  .catch((e) => {
+    error = e;
+  });
