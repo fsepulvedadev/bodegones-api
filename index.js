@@ -26,6 +26,6 @@ app.get("/", async (req, res) => {
 
 app.listen(PORT, () =>
   mongoose
-    .connect(DATABASE_URI)
+    .connect(process.env.MONGODB_URI)
     .then(() => console.log("Servidor levantado en 3000"))
 );
