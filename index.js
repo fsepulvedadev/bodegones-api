@@ -16,12 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/bodegones", bodegonesRouter);
 app.get("/", async (req, res) => {
-  try {
-    const bodegones = await bodegonModel.find();
-    res.send(bodegones);
-  } catch (error) {
-    res.status(500).send(JSON.stringify(error));
-  }
+  res.send("Hola mundo");
 });
 
 app.listen(PORT, () =>
