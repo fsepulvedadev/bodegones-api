@@ -4,6 +4,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { bodegonModel } from "./bodegones/model.js";
 
+const PORT = process.env.PORT || 3000;
+
 dotenv.config({ path: "./.env" });
 
 import { bodegonesRouter } from "./bodegones/router.js";
@@ -22,7 +24,7 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.listen(3000, () =>
+app.listen(PORT, () =>
   mongoose
     .connect(DATABASE_URI)
     .then(() => console.log("Servidor levantado en 3000"))
