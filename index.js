@@ -1,8 +1,7 @@
 import express from "express";
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import { bodegonModel } from "./bodegones/model.js";
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,7 +15,8 @@ app.use(cors());
 app.use(express.json());
 app.use("/bodegones", bodegonesRouter);
 app.get("/", async (req, res) => {
-  res.send("Hola mundo");
+  console.log(mongoose.connection.readyState);
+  res.send(`Hola mundo ${mongoose.connection.readyState}`);
 });
 
 app.listen(PORT, () =>
